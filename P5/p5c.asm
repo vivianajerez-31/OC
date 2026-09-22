@@ -11,13 +11,16 @@ _start:
     ;c) N = BL * 8
 
     mov al, 8
-    mov BL
-    mov, ax  	
+    mul bl
+    mov [N], ax 
+    mov ax, [N]
 	call pHex_w
 
-	mov	,
+	mov al, 10
 	call putchar      	; 
 
 	mov	eax, 1
     int 0x80
 
+section .data
+N dw 0
