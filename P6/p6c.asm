@@ -2,8 +2,7 @@
 
 extern pBin_dw
 
-;c)Colocar en el registro ESI el valor 0x20D685F3 
-y por medio de enmascaramiento invertir los bits 0, 5, 13, 18 y 30, sin modificar los demás.
+;c)Colocar en el registro ESI el valor 0x20D685F3 y por medio de enmascaramiento invertir los bits 0, 5, 13, 18 y 30, sin modificar los demás.
 
 section	.text
 	global _start       ;referencia para inicio de programa
@@ -16,5 +15,8 @@ _start:
     call pBin_dw
     mov al, 10
     call putchar
+
+    mov eax, 1
+    int 0x80
 
      

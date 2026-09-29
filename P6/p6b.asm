@@ -1,5 +1,7 @@
 %include "../LIB/pc_iox.inc"
 
+extern pBin_dw
+
 ;b)Coloque en CX el valor 0x3F48 y por medio de corrimientos obtener 0xFA40.
 
 section	.text
