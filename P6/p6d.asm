@@ -3,6 +3,8 @@
 extern pBin_dw
 
 ;d)Guardar ESI en la pila
+
+section	.text
 	global _start       
 
 _start:

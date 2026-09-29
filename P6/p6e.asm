@@ -2,4 +2,13 @@
 
 extern pBin_dw
 
+;e) Colocar en el registro CH el valor 0xA7 y por medio de enmascaramiento activar los bits 3 y 6, sin modificar los demás
 
+section .text
+	global _start       
+
+_start:
+
+    mov ch, 0xA7
+    xor ch, 0x48
+    
