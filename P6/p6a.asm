@@ -10,7 +10,7 @@ section	.text
 _start:   
 
     mov eax, 0x22446688
-    mov eax, 4
+    ror eax, 4
 
     call  pBin_dw
     mov al, 10 
