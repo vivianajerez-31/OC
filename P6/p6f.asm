@@ -10,9 +10,9 @@ section .text
 _start:
 
     mov bp, 0x67DA 
-    xor bp, 0xBBAD
+    and bp, 0xBBAD
 
-    mov aX, bp
+    mov ax, bp
     call pBin_w
     mov al, 10 
     call putchar
