@@ -1,6 +1,6 @@
 %include "../LIB/pc_iox.inc"
 
-extern pBin_w
+extern pBin_dw
 
 ;h) Dividir EBX entre 32 usando operaciones de manipulación de bits. 
 
@@ -8,17 +8,15 @@ section .text
 	global _start       
 
 _start:
-
-    mov bp, 0x67DA 
-    xor bp, 0xBBAD
-
-    shr bp, 3
     
-    mov aX, bp
-    call pBin_w
+    mov ebx, 0x82244668
+    shr ebx, 5
+
+    mov eax, ebx
+    call pBin_dw
     mov al, 10 
     call putchar
-
-    mov eax, 1 
-    int 0x80
     
+    mov eax, 1
+    int 0x80
+
