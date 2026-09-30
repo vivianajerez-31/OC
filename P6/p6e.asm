@@ -1,6 +1,6 @@
 %include "../LIB/pc_iox.inc"
 
-extern pBin_b
+extern pBin_dw
 
 ;e) Colocar en el registro CH el valor 0xA7 y por medio de enmascaramiento activar los bits 3 y 6, sin modificar los demás
 
