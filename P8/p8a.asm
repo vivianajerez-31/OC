@@ -6,16 +6,13 @@ section .text
 ;almacenar	el	vector	está	dado por	el	registro	EBX	y	la	cantidad	N	por	el	registro	ECX	el	cual	
 ;puede	ser	máximo	de	10.	
 
-_start:
-mov []
-mov []
+capturaVec:
+    push ecx 
+    push ebx 
 
-captura:
+cvloop:
     call getche 
-    mov[esi], al 
-    inc edi
-    loop acptura
-
+    sub al, '0' 
     mov esi, arreglo 
     mov ecx, 10
 
