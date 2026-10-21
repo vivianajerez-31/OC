@@ -19,7 +19,7 @@ capturaVec:
     pop ebx
     pop ecx
     ret
-mos
+
 
 
     
