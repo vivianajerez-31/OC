@@ -10,14 +10,16 @@ capturaVec:
     push ecx 
     push ebx 
 
-cvloop:
+    cVloop:
     call getche 
     sub al, '0' 
-    mov esi, arreglo 
-    mov ecx, 10
-
+    mov [ebx], al
+    inc ebx
+    loop cVloop
+    pop ebx
+    pop ecx
+    ret
 mos
 
-section .data
-    msg
+
     
