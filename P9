@@ -21,11 +21,11 @@ mystrcmp:
     push esi
     push edi
     mov esi, [ebp+8]
-    mov esi, [ebp+12]
+    mov edi, [ebp+12]
 
 cmp_loop:
     mov al, [esi]
-    mov al, [edi]
+    cmp al, [edi]
     jne distintas
     cmp al, 0
     je iguales 
