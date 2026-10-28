@@ -1,1 +1,96 @@
+section .text
+    global suma
+    global mystrcmp
+    global mystrlen
+    global getBit
+    global setBit
 
+;int suma( int num1, int num 2): Función que hace la suma de dos enteros que recibe como parámetros y retorna el resultado.
+suma: 
+    push ebp
+    mov ebp, esp
+    mov eax, [ebp+8]
+    add eax, [ebp+12]
+    pop ebp
+    ret
+
+;2. int mystrcmp( char *str1, char *str2) :Funcion que compara dos cadenas y retorna cero si son iguales de lo contrario retorna 1.
+mystrcmp:
+    push ebp
+    mov ebp, esp
+    push esi
+    push edi
+    mov esi, [ebp+8]
+    mov esi, [ebp+12]
+
+cmp_loop:
+    mov al, [esi]
+    mov al, [edi]
+    jne distintas
+    cmp al, 0
+    je iguales 
+    inc esi 
+    inc edi
+    jmp cmp_loop
+
+iguales:
+    mov eax, 0
+    jmp cmp_fin
+
+distintas:
+    mov eax, 1
+
+cmp_fin:
+    pop edi
+    pop esi
+    pop ebp
+    ret
+
+
+;3. int mystrlen (char *str).
+;Funcion que retorna la cantidad de caracteres que tiene una cadena que recibe como parametro.
+
+mystrlen:
+    push ebp
+    mov ebp, esp
+    mov edx, [ebp+8]
+    xor eax, eax
+
+len_loop:
+    cmp byte [edx+eax], 0
+    je len_fin
+    inc eax
+    jmp len_loop
+
+len_fin:
+    pop ebp
+    ret
+
+;4. int getBit( int value, int numbit).Funcion que retorna el valor del bit (0 o 1) que se encuentra en la posicion numbit de la variable value. 
+;Tanto value como numbit son enteros y la funcion los recibe como parámetros.
+
+getBit:
+    push ebp
+    mov ebp, esp
+    mov eax, [ebp+8]
+    mov ecx, [ebp+12]
+    shr eax, cl 
+    and eax, 1
+    pop ebp
+    ret
+
+;5. int setBit( int value, int numbit).
+;Funcion que retorna el valor del parametro value con el numero de bit indicado por el parametro numbit en 1. Tanto value como numbit 
+;son enteros y la funcion los recibe como parametros. Por ejemplo: Si value=0 y numbit=2 entonce setBit(value,2) retorna el valor 4.
+
+setBit:
+    push ebp
+    mov ebp, esp
+    mov eax, [ebp+8]
+    mov ecx, [ebp+12]
+    mov edx, 1
+    shl edx, cl
+    or eax, edx
+    pop ebp
+    ret
+     
