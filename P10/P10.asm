@@ -16,7 +16,7 @@ my_putchar:
     pop eax                ; recuperar EXA 
     popad                  ; recuperar todos los registros
     ret
-
+;--------------------------------------
 imprime_bits:
 bits_loop: 
     shl esi, 1
