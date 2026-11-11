@@ -9,7 +9,7 @@ int main() {
     char salida[50];
 
     printf("str_len(\"hola\") = %d\n", str_len("hola"));
-    printf("str_len(\"ensamblador\") = %d\n", str_len("ensambaldor"));
+    printf("str_len(\"ensamblador\") = %d\n", str_len("ensamblador"));
 
     str_mid(salida, "ensamblador", 0,2);
     printf("str_mid(0,2) = %s\n", salida);
